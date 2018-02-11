@@ -10,7 +10,7 @@ namespace RestBankingService.Contract
     {
         [OperationContract]
         [WebInvoke(Method = "GET",
-             UriTemplate = "Balance",
+             UriTemplate = "Balance?accountNumber={accountNumber}",            
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Wrapped)]

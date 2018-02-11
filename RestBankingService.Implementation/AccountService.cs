@@ -9,13 +9,20 @@ namespace RestBankingService.Implementation
     [ServiceBehavior(IncludeExceptionDetailInFaults =true,ConcurrencyMode = ConcurrencyMode.Multiple, InstanceContextMode = InstanceContextMode.PerSession)]
     public class AccountService : IAccountService
     {
-        private string connectionString = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
+        private string connectionString;
+        public string ConnectionString { get => connectionString; set => connectionString = value; }
+
+        public AccountService()
+        {
+            ConnectionString = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
+        }      
+
         public AccountResponse Balance(int accountNumber)
         {
             var response = new AccountResponse { AccountNumber = accountNumber };
 
             using (var connection =
-            new SqlConnection(connectionString))
+            new SqlConnection(ConnectionString))
             {
 
                 var command = new SqlCommand("SP_DEPOSITE_AMOUNT;", connection) { CommandType = System.Data.CommandType.StoredProcedure };
@@ -42,7 +49,7 @@ namespace RestBankingService.Implementation
             var response = new AccountResponse { AccountNumber = request.AccountNumber };
 
             using (var connection =
-            new SqlConnection(connectionString))
+            new SqlConnection(ConnectionString))
             {
 
                 var command = new SqlCommand("SP_DEPOSITE_AMOUNT;", connection) { CommandType = System.Data.CommandType.StoredProcedure };
@@ -77,7 +84,7 @@ namespace RestBankingService.Implementation
             var response = new AccountResponse { AccountNumber = request.AccountNumber };
 
             using (var connection =
-            new SqlConnection(connectionString))
+            new SqlConnection(ConnectionString))
             {
 
                 var command = new SqlCommand("SP_WITHDRAW_AMOUNT;", connection) { CommandType = System.Data.CommandType.StoredProcedure };
