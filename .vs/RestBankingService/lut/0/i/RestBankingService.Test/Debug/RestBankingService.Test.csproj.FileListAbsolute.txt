@@ -1,0 +1,9 @@
+E:\myproject\RestBankingService\.vs\RestBankingService\lut\0\b\RestBankingService.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\myproject\RestBankingService\.vs\RestBankingService\lut\0\b\RestBankingService.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+E:\myproject\RestBankingService\.vs\RestBankingService\lut\0\b\RestBankingService.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+E:\myproject\RestBankingService\.vs\RestBankingService\lut\0\b\RestBankingService.Test\bin\Debug\RestBankingService.Test.dll
+E:\myproject\RestBankingService\.vs\RestBankingService\lut\0\b\RestBankingService.Test\bin\Debug\RestBankingService.Test.pdb
+E:\myproject\RestBankingService\.vs\RestBankingService\lut\0\i\RestBankingService.Test\Debug\RestBankingService.Test.csprojResolveAssemblyReference.cache
+E:\myproject\RestBankingService\.vs\RestBankingService\lut\0\i\RestBankingService.Test\Debug\RestBankingService.Test.csproj.CoreCompileInputs.cache
+E:\myproject\RestBankingService\.vs\RestBankingService\lut\0\i\RestBankingService.Test\Debug\RestBankingService.Test.dll
+E:\myproject\RestBankingService\.vs\RestBankingService\lut\0\i\RestBankingService.Test\Debug\RestBankingService.Test.pdb

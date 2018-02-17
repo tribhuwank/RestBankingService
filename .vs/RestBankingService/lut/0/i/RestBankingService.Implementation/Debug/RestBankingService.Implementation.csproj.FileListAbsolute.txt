@@ -1,0 +1,6 @@
+E:\myproject\RestBankingService\.vs\RestBankingService\lut\0\b\RestBankingService.Implementation\bin\Debug\RestBankingService.Implementation.dll.config
+E:\myproject\RestBankingService\.vs\RestBankingService\lut\0\b\RestBankingService.Implementation\bin\Debug\RestBankingService.Implementation.dll
+E:\myproject\RestBankingService\.vs\RestBankingService\lut\0\b\RestBankingService.Implementation\bin\Debug\RestBankingService.Implementation.pdb
+E:\myproject\RestBankingService\.vs\RestBankingService\lut\0\i\RestBankingService.Implementation\Debug\RestBankingService.Implementation.csproj.CoreCompileInputs.cache
+E:\myproject\RestBankingService\.vs\RestBankingService\lut\0\i\RestBankingService.Implementation\Debug\RestBankingService.Implementation.dll
+E:\myproject\RestBankingService\.vs\RestBankingService\lut\0\i\RestBankingService.Implementation\Debug\RestBankingService.Implementation.pdb

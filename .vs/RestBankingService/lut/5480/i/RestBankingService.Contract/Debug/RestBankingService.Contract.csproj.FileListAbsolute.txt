@@ -1,0 +1,7 @@
+E:\myproject\RestBankingService\.vs\RestBankingService\lut\0\b\RestBankingService.Contract\bin\Debug\RestBankingService.Contract.dll.config
+E:\myproject\RestBankingService\.vs\RestBankingService\lut\0\b\RestBankingService.Contract\bin\Debug\RestBankingService.Contract.dll
+E:\myproject\RestBankingService\.vs\RestBankingService\lut\0\b\RestBankingService.Contract\bin\Debug\RestBankingService.Contract.pdb
+E:\myproject\RestBankingService\.vs\RestBankingService\lut\0\i\RestBankingService.Contract\Debug\RestBankingService.Contract.csprojResolveAssemblyReference.cache
+E:\myproject\RestBankingService\.vs\RestBankingService\lut\0\i\RestBankingService.Contract\Debug\RestBankingService.Contract.csproj.CoreCompileInputs.cache
+E:\myproject\RestBankingService\.vs\RestBankingService\lut\0\i\RestBankingService.Contract\Debug\RestBankingService.Contract.dll
+E:\myproject\RestBankingService\.vs\RestBankingService\lut\0\i\RestBankingService.Contract\Debug\RestBankingService.Contract.pdb

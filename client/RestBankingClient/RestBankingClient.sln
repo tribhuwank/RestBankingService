@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestBankingClient", "RestBankingClient\RestBankingClient.csproj", "{32257E90-8418-410C-93A2-AB6675F24029}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestBankingConsoleClient", "RestBankingConsoleClient\RestBankingConsoleClient.csproj", "{C586A728-D9E5-487A-B5D5-CC7E4ABC93D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32257E90-8418-410C-93A2-AB6675F24029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32257E90-8418-410C-93A2-AB6675F24029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32257E90-8418-410C-93A2-AB6675F24029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32257E90-8418-410C-93A2-AB6675F24029}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C586A728-D9E5-487A-B5D5-CC7E4ABC93D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C586A728-D9E5-487A-B5D5-CC7E4ABC93D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C586A728-D9E5-487A-B5D5-CC7E4ABC93D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C586A728-D9E5-487A-B5D5-CC7E4ABC93D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {15D1383C-7D40-4D73-AC37-FBE562638474}
+	EndGlobalSection
+EndGlobal
