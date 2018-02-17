@@ -1,6 +1,7 @@
 ﻿using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
+using System.Threading.Tasks;
 
 namespace RestBankingService.Contract
 {
@@ -14,7 +15,7 @@ namespace RestBankingService.Contract
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Wrapped)]
-        AccountResponse Balance(int accountNumber);
+        Task<AccountResponse>  Balance(int accountNumber);
 
         [OperationContract]
         [WebInvoke(Method = "POST",
@@ -22,7 +23,7 @@ namespace RestBankingService.Contract
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Wrapped)]
-        AccountResponse Deposit(AccountRequest request);
+        Task<AccountResponse> Deposit(AccountRequest request);
 
 
         [OperationContract]
@@ -31,7 +32,7 @@ namespace RestBankingService.Contract
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Wrapped)]
-        AccountResponse Withdraw(AccountRequest request);
+        Task<AccountResponse> Withdraw(AccountRequest request);
 
         // TODO: Add your service operations here
     }

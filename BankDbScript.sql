@@ -2,26 +2,10 @@ USE [master]
 GO
 
 /****** Object:  Database [MultiCurrencyAccountDB]    Script Date: 2/10/2018 10:52:31 PM ******/
-DROP DATABASE [BankDB]
-GO
-
-/****** Object:  Database [MultiCurrencyAccountDB]    Script Date: 2/10/2018 10:52:31 PM ******/
 CREATE DATABASE [BankDB] 
 GO
 USE [BankDB]
 GO
-CREATE TABLE [Exchange_Rate](
-[CurrencyCode] VARCHAR(3) NOT NULL,
-[Date] [datetime] NOT NULL,
-[Unit] INT NOT NULL,
-[Rate] Decimal(18,2) NOT NULL
-)
-GO
-ALTER TABLE [Exchange_Rate] 
-ADD CONSTRAINT PK_Exchange_Rate_CurrencyCode_Date PRIMARY KEY([CurrencyCode],[Date])
-
-GO
-
 
 CREATE TABLE [Account](
 [Id] INT NOT NULL IDENTITY(1,1),
@@ -60,24 +44,23 @@ ADD CONSTRAINT FK_Transaction_AccountId_Id FOREIGN KEY([AccountId]) REFERENCES A
 GO
 --balance
 CREATE PROCEDURE [dbo].[SP_BALANCE_AMOUNT]
-@AccountNumber INT
-
+@AccountNumber INT,
+@Balance DECIMAL(18,2) OUT
 AS
 BEGIN
-	SELECT Amount FROM Account WHERE AccountNumber=@AccountNumber	
+	SELECT @Balance= [Amount] FROM [Account] WHERE [AccountNumber]=@AccountNumber	
 END
 GO
 --deposit
 CREATE PROCEDURE [dbo].[SP_DEPOSITE_AMOUNT]
 @AccountNumber INT,
-@Currency VARCHAR(3),
 @Amount DECIMAL(18,2),
 @Balance DECIMAL(18,2) OUT
 AS
 BEGIN
 	
 	BEGIN TRY
-		SELECT @Balance=(SELECT Amount FROM Account WHERE AccountNumber=@AccountNumber)+(@AMOUNT*(SELECT (Unit*Rate)/Unit FROM Exchange_Rate WHERE CurrencyCode=@Currency AND  [Date] = @@DATEFIRST))
+		SELECT @Balance=(SELECT [Amount] FROM [Account] WHERE [AccountNumber]=@AccountNumber)+ @AMOUNT
 		UPDATE [Account] SET [Amount]=@Balance
 		WHERE [AccountNumber]=@AccountNumber		
 	END TRY
@@ -89,13 +72,12 @@ GO
 --Withdraw
 CREATE PROCEDURE [dbo].[SP_WITHDRAW_AMOUNT]
 @AccountNumber INT,
-@Currency VARCHAR(3),
 @Amount DECIMAL(18,2),
 @Balance DECIMAL(18,2) OUT
 AS
 BEGIN
-  BEGIN TRY
-	SELECT @Balance= (SELECT Amount FROM Account WHERE AccountNumber=@AccountNumber)-(@AMOUNT*(SELECT (Unit*Rate)/Unit FROM Exchange_Rate WHERE CurrencyCode=@Currency AND  [Date] = @@DATEFIRST) )
+  BEGIN TRY  
+	SELECT @Balance= (SELECT [Amount] FROM [Account] WHERE [AccountNumber]=@AccountNumber)-@AMOUNT 
 	UPDATE [Account] SET [Amount]=@Balance WHERE [AccountNumber]=@AccountNumber	  	
   END TRY
   BEGIN CATCH
@@ -106,3 +88,10 @@ END
 
 GO
 
+CREATE PROCEDURE [SP_GET_ACCOUNT]
+@AccountNumber INT
+AS
+BEGIN
+  SELECT [Id],[AccountNumber],[Amount],[Currency] FROM Account
+END
+GO

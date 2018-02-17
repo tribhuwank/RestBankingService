@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RestBankingService.Contract;
 
 namespace RestBankingService.Test
 {
@@ -18,8 +19,15 @@ namespace RestBankingService.Test
         public void Test_Withdraw()
         {
             //Arrage
+            int accountNumber = 1234;
+            decimal actualValue = 1000;
+            string currency = "USD";
+            var req = new AccountRequest {AccountNumber= accountNumber,Amount=40,Currency= currency };
             //Act
+            var service = new Implementation.AccountService();
+            var result = service.Withdraw(req);
             //Assert
+            Assert.AreEqual(actualValue, result);
 
         }
         [TestMethod]
@@ -27,7 +35,7 @@ namespace RestBankingService.Test
         {
             //Arrage
             int accountNumber = 1234;
-            decimal actualValue = 0;
+            decimal actualValue = 500;
             //Act
             var service = new Implementation.AccountService();
             var result=service.Balance(accountNumber);
